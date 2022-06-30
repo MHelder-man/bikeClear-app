@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Datum</th>
+    <th scope="col">Plaats</th>
+    <th scope="col">Hartslag</th>
+    <th scope="col">Afstand</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let bikeClear of bikeclears">
+    <td>{{bikeClear.date}}</td>
+    <td>{{bikeClear.ride}}</td>
+    <td>{{bikeClear.heartRate}} SPM</td>
+    <td>{{bikeClear.distance}} KM </td>
+    <button class="btn btn-outline-success" (click)="delete(bikeClear.id)">Verwijderen</button>
+  </tr>
+  </tbody>
+</table>
+

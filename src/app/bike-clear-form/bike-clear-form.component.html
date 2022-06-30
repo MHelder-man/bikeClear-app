@@ -1,0 +1,25 @@
+<div class="input-group mb-3">
+  <span class="input-group-text">Ride:</span>
+  <input class="form-control" type="text" [(ngModel)]="bikeClear.ride"
+         name="bikeClear" placeholder="Naam rit" aria-describedby="basic-addon1">
+</div>
+<div class="row">
+  <div class="column">
+<div class="input-group mb-3">
+  <span class="input-group-text">Hartslag:</span>
+  <input class="form-control" type="number" [(ngModel)]="bikeClear.heartRate"
+         name="bikeClear" min="70" max="200" aria-describedby="basic-addon1">
+  <span class="input-group-text" id="basic-addon2">SPM</span>
+</div>
+  </div>
+    <div class="column">
+<div class="input-group mb-3">
+  <span class="input-group-text">Afstand:</span>
+  <input class="form-control" type="number" [(ngModel)]="bikeClear.distance"
+         name="bikeClear" aria-describedby="basic-addon1">
+  <span class="input-group-text" id="basic-addon3">KM</span>
+</div><br>
+</div>
+</div>
+
+<button class="btn btn-success" (click)="add() ">Voeg toe</button>

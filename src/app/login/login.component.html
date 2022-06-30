@@ -1,0 +1,33 @@
+<br><button type="button" class="btn btn-success visible" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+  Login
+</button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="mb-3">
+            <label class="form-label">Gebruikersnaam</label>
+            <input class="form-control" type="text" [(ngModel)]="user.userName"
+                   name="username" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Wachtwoord</label>
+            <input required class="form-control" type="password" [(ngModel)]="user.password"
+                   name="password">
+          </div>
+          <button class="btn btn-success" (click)="login()" data-bs-dismiss="modal">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-success" href="http://localhost:4200/register" role="button">Registreer</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

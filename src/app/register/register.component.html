@@ -1,0 +1,50 @@
+<br><button type="button" class="btn btn-success visible" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+  Registreer
+</button>
+<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registreer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="mb-3">
+            <label class="form-label">Voornaam</label>
+            <input class="form-control" type="text" [(ngModel)]="user.firstname"
+                   name="firstname" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input class="form-control" type="email" [(ngModel)]="user.mail"
+                   name="mail" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Gebruikersnaam</label>
+            <input class="form-control" type="text" [(ngModel)]="user.userName"
+                   name="username" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Wachtwoord</label>
+            <input required class="form-control" type="password" [(ngModel)]="user.password"
+                   name="password">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input">
+            <label class="form-check-label">Check me out</label>
+          </div>
+          <button class="btn btn-success" (click)="register()" data-bs-dismiss="modal">Registreer</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a class="btn btn-success" href="http://localhost:4200/login" role="button">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+</script>

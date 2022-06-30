@@ -12,12 +12,14 @@ import { MapsComponent } from './maps/maps.component';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { BikeUserComponent } from './bike-user/bike-user.component';
 import { RegisterComponent } from './register/register.component';
+import {HomeComponent} from "./home/home.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     BikeClearFormComponent,
     BikeClearListComponent,
+    HomeComponent,
     LoginComponent,
     MapsComponent,
     BikeUserComponent,
