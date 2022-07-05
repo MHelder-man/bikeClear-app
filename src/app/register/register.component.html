@@ -1,50 +1,81 @@
-<br><button type="button" class="btn btn-success visible" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
-  Registreer
-</button>
-<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Registreer</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="container-sm shadow-lg p-3 mb-5 bg-body rounded" style="margin-top: 30px;">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-md-9 col-lg-6 col-xl-5">
+      <img src="assets/images/LoginLogo.png"
+           class="img-fluid" alt="Sample image">
+    </div>
+    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+      <div *ngIf="showErrorMessage">
+        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+          <strong>Fout!</strong>
+          <hr>
+          {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
       </div>
-      <div class="modal-body">
-        <form >
-          <div class="mb-3">
-            <label class="form-label">Voornaam</label>
-            <input class="form-control" type="text" [(ngModel)]="user.firstname"
-                   name="firstname" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">E-mail</label>
-            <input class="form-control" type="email" [(ngModel)]="user.mail"
-                   name="mail" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Gebruikersnaam</label>
-            <input class="form-control" type="text" [(ngModel)]="user.userName"
-                   name="username" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Wachtwoord</label>
-            <input required class="form-control" type="password" [(ngModel)]="user.password"
-                   name="password">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input">
-            <label class="form-check-label">Check me out</label>
-          </div>
-          <button class="btn btn-success" (click)="register()" data-bs-dismiss="modal">Registreer</button>
-        </form>
+  <h3>Registreer</h3><br>
+  <form>
+    <div class="form-outline mb-3">
+      <label class="form-label">Voornaam</label>
+      <input class="form-control" type="text" [(ngModel)]="user.firstname"
+             name="firstname">
+    </div>
+    <div class="form-outline mb-3">
+      <label class="form-label">E-mail</label>
+      <input class="form-control" type="email" [(ngModel)]="user.mail"
+             name="mail" required>
+    </div>
+    <div class="form-outline mb-3">
+      <label class="form-label">Gebruikersnaam</label>
+      <input class="form-control" type="text" [(ngModel)]="user.userName"
+             name="username" required>
+    </div>
+    <div class="form-outline mb-3">
+      <label class="form-label">Wachtwoord</label>
+      <input required class="form-control" type="password" [(ngModel)]="user.password"
+             name="password">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Ik ga akkoord met de voorwaarden</label>
+    </div>
+    <button class="btn btn-success" (click)="register()" data-bs-dismiss="modal">Registreer</button>
+    <div class="text-center">
+      <p>Al lid? <a class="btn btn-secondary" href="http://localhost:4200/login" role="button">Login</a></p>
+    </div>
+  </form>
+</div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header text-success">Voeg ritten toe</h5>
+        <img src="assets/images/hu-chen-lgdkdfjQiK4-unsplash.jpg" class="card-img-bottom" alt="...">
+        <div class="card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus orci urna, vel luctus tortor aliquam at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nibh risus, dignissim eu eleifend vel, euismod sit amet eros. Aenean dictum sed mauris eget aliquet. Vivamus rhoncus eget metus vel vulputate. Donec et viverra augue, id vehicula mi. Nullam luctus ullamcorper consectetur.</p>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a class="btn btn-success" href="http://localhost:4200/login" role="button">Login</a>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header text-success">Werk aan je conditie</h5>
+        <img src="assets/images/markus-winkler-IrRbSND5EUc-unsplash.jpg" class="card-img-bottom" alt="...">
+        <div class="card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus orci urna, vel luctus tortor aliquam at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nibh risus, dignissim eu eleifend vel, euismod sit amet eros. Aenean dictum sed mauris eget aliquet. Vivamus rhoncus eget metus vel vulputate. Donec et viverra augue, id vehicula mi. Nullam luctus ullamcorper consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h5 class="card-header text-success">Plan je Route</h5>
+        <img src="assets/images/Routes2.png" class="card-img-bottom" alt="...">
+        <div class="card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus orci urna, vel luctus tortor aliquam at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nibh risus, dignissim eu eleifend vel, euismod sit amet eros. Aenean dictum sed mauris eget aliquet. Vivamus rhoncus eget metus vel vulputate. Donec et viverra augue, id vehicula mi. Nullam luctus ullamcorper consectetur.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<script>
-
-</script>

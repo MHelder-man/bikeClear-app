@@ -12,6 +12,9 @@ export class RegisterComponent implements OnInit {
 
   user = new User();
 
+  message: string = "Vul alle velden in, of kies een andere Gebruikersnaam";
+  showErrorMessage: boolean = false;
+
   constructor(
     public userService: UserService,
     private router : Router) {
@@ -23,8 +26,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.userService.save(this.user).subscribe(
       data => {
-        this.router.navigate(['/home']);
-    });
+        this.router.navigate(['/login']);
+    }, error =>
+        this.showErrorMessage = true
+      );
   }
 
 }

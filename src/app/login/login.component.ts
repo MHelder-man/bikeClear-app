@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 
   user = new User();
 
+  message: string = "Onbekende Login";
+  showErrorMessage: boolean = false;
 
   returnUrl: string = "";
 
@@ -28,19 +30,14 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-
-      //user =>
-      // zet op session
-      // spring naar bike-clear-list
-
-
   login() {
     this.userService.login(this.user).subscribe(
       data => {
         this.userService.currentUser = data
-        sessionStorage.setItem('currentUser', 'data')
+        sessionStorage.setItem('CurrentUser', 'data')
         this.router.navigate(['/bike-user']);
-      }, error => this.router.navigate(['/register'])
+      }, error =>
+        this.showErrorMessage = true
     )
   }
 }
