@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.user).subscribe(
       data => {
         this.userService.currentUser = data
-        sessionStorage.setItem('CurrentUser', 'data')
+        sessionStorage.setItem('id', this.userService.currentUser.id.toString())
         this.router.navigate(['/bike-user']);
       }, error =>
         this.showErrorMessage = true

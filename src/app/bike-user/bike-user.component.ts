@@ -14,17 +14,25 @@ export class BikeUserComponent implements OnInit {
 
   bikeclears: BikeClear[] = [];
 
-  constructor(public bikeClearService : BikeClearService,
-  public userService : UserService,
-  private router : Router) { }
 
-  ngOnInit(): void {
-    this.getAll();
+  constructor(public bikeClearService: BikeClearService,
+              public userService: UserService,
+              private router: Router) {
   }
 
-  getAll() {
+  ngOnInit(): void {
+    if (sessionStorage.getItem('id') != null) {
+      let id = Number(sessionStorage.getItem('id'))
+      this.userService.findById(id).subscribe(
+        user=> this.userService.currentUser = user
+      )
+    }
+  }
+}
+
+  /*getAll() {
     this.bikeClearService.getAll().subscribe(
       data => this.bikeclears = data
     )
   }
-}
+}*/

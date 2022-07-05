@@ -29,7 +29,7 @@ export class BikeClearFormComponent implements OnInit {
     let bc = this.bikeClear
     bc.user = user
     this.bikeClearService.save(bc).subscribe(
-      () => this.bikeClearList.getAll()
+      () => this.bikeClearList.findById()
     )
   }
 
