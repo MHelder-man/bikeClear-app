@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BikeClearService} from "../bike-clear.service";
 import {BikeClear} from "../bike-clear";
-import {User} from "../user";
 import {UserService} from "../user.service";
 import {Router} from "@angular/router";
 
@@ -26,13 +25,11 @@ export class BikeUserComponent implements OnInit {
       this.userService.findById(id).subscribe(
         user=> this.userService.currentUser = user
       )
-    }
+    } else this.router.navigate(['/home'])
+  }
+
+  logout() {
+    this.userService.logout();
   }
 }
 
-  /*getAll() {
-    this.bikeClearService.getAll().subscribe(
-      data => this.bikeclears = data
-    )
-  }
-}*/

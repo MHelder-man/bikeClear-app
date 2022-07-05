@@ -2,12 +2,18 @@
     background-image: url('assets/images/eduard-delputte-vhufahtU7Lw-unsplash.jpg');
     background-position: center center; background-repeat: no-repeat; background-size: cover; min-height: 500px;">
   <div class="container text-white float-center" style="padding: 20px">
-    <h1 class="display-4">Welkom bij BikeClearman!</h1>
-    <p class="lead">Login of registreer om meer te zien</p>
-    <hr class="my-4">
-    <p class="lead">
-      <a class="btn btn-outline-light btn-lg" href="http://localhost:4200/login" role="button">Login</a>
-    </p>
+    <div *ngIf="CheckCurrentUser; else elseBlock">
+      <h1>Hallo {{userService.currentUser.firstname}}</h1>
+      <a class="btn btn-outline-light btn-sm" (click)="logout()" href="http://localhost:4200/home" role="button">Logout</a>
+    </div>
+    <ng-template #elseBlock>
+      <h1 class="display-4">Welkom bij BikeClearman!</h1>
+      <p class="lead">Login of registreer om meer te zien</p>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-outline-light btn-lg" href="http://localhost:4200/login" role="button">Login</a>
+      </p>
+    </ng-template>
   </div>
 </div><br>
     <div class="container">

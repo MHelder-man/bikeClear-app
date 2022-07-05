@@ -1,12 +1,17 @@
 <div class="p-5 text-center bg-image rounded-3" style="
     background-image: url('assets/images/eduard-delputte-vhufahtU7Lw-unsplash.jpg');
     background-position: center center; background-repeat: no-repeat; background-size: cover; min-height: 500px;">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1 >Welkom {{userService.currentUser.firstname}} !</h1>
+        <h1>Welkom {{userService.currentUser.firstname}}!</h1>
+        <hr class="my-4">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus orci urna, vel luctus tortor aliquam at</p>
       </div>
     </div>
+  </div>
+<div class="position-relative">
+  <div class="position-absolute bottom-0 start-0">
+    <a class="btn btn-outline-light btn-sm" style="margin-left: 10px; margin-bottom: 10px;" (click)="logout()" href="http://localhost:4200/home" role="button">Logout</a>
   </div>
 </div>
 <div class="d-grid gap-3">
@@ -20,7 +25,7 @@
   </div>
   <div class="p-2 bg-light border">
     <h3>Kaart</h3>
-    <app-maps></app-maps>
+    <div class="container d-flex justify-content-center"><app-maps></app-maps></div>
   </div>
 </div>
 
