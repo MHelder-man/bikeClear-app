@@ -1,6 +1,16 @@
 <google-map
+  class="map"
+  height="500px"
+  width="100%"
   [zoom]="zoom"
   [center]="center"
   [options]="options"
-  ></google-map>
+><map-marker
+[position]="center">
+</map-marker>
+  <map-directions-renderer
+    *ngIf="(directionsResults$ | async) as directionsResults"
+    [directions]="directionsResults">
+  </map-directions-renderer>
+</google-map>
 

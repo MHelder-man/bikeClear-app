@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {HomeComponent} from "./home/home.component";
 import {BikeUserComponent} from "./bike-user/bike-user.component";
+import {GraphComponent} from "./graph/graph.component";
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'bike-user', component: BikeUserComponent},
+  {path: 'graph', component: GraphComponent},
   {path: '', redirectTo:'/home', pathMatch: 'full'},
 
   {path: '**', redirectTo: ''}

@@ -9,10 +9,13 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import { MapsComponent } from './maps/maps.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
 import { BikeUserComponent } from './bike-user/bike-user.component';
 import { RegisterComponent } from './register/register.component';
 import {HomeComponent} from "./home/home.component";
+
+
+
 
 @NgModule({
   declarations: [
@@ -23,15 +26,15 @@ import {HomeComponent} from "./home/home.component";
     LoginComponent,
     MapsComponent,
     BikeUserComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        GoogleMapsModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    GoogleMapsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

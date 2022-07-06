@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {map, Observable} from "rxjs";
+import {MapDirectionsService} from "@angular/google-maps";
 
 @Component({
   selector: 'app-maps',
@@ -9,20 +11,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapsComponent implements OnInit {
 
-  zoom = 14
-  center: google.maps.LatLngLiteral = {lat: 53.2194, lng: 6.5665};
-  options: google.maps.MapOptions = {
-    mapTypeId: 'roadmap',
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
-    maxZoom: 15,
-    minZoom: 8,
-  }
-
-  constructor() {
-  }
-
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
@@ -31,6 +19,32 @@ export class MapsComponent implements OnInit {
       }
     })
 
+  }
+  zoom = 16
+  // @ts-ignore
+  center: google.maps.LatLngLiteral = this.ngOnInit();
+  options: google.maps.MapOptions = {
+    zoomControl: false,
+    clickableIcons: true,
+    disableDefaultUI: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true,
+    maxZoom: 15,
+    minZoom: 8,
+  }
+
+
+
+  readonly directionsResults$: Observable<google.maps.DirectionsResult|undefined>;
+
+
+  constructor(mapDirectionsService: MapDirectionsService) {
+    const request: google.maps.DirectionsRequest = {
+      destination: {lat: 12, lng: 4},
+      origin: this.center,
+      travelMode: google.maps.TravelMode.BICYCLING
+    };
+    this.directionsResults$ = mapDirectionsService.route(request).pipe(map(response => response.result));
   }
 
 }
